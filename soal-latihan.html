@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Latihan</title>
+</head>
+
+<body>
+    <!-- Buat id untuk menampilkan hasil pemrosesan yang dilakukan olah React.js-->
+    <div id="hasil"></div>
+
+    <!-- sematkan library React.js yang diimport melalui CDN-->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- memngubah bahasa elemen HTMl menjadi bahasa react -->
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+    <script type="text/babel">
+        // tulis ReactJS disni saja
+        
+        function NilaiMax(props) {
+            let a = parseInt(props.bil1);
+            let b = parseInt(props.bil2);
+            let c = parseInt(props.bil3);
+            const bilangan = [a, b, c];
+            let max = bilangan[0];
+            let min = bilangan[0];
+
+            bilangan.forEach((bilangan) => {
+                if(max < bilangan){
+                    max = bilangan
+                }
+            })
+            return(
+                <p>
+                    Input pertama adalah {props.bil1} <br/>
+                    Input kedua adalah {props.bil2} <br/>
+                    Input ketiga adalah {props.bil3} <br/>
+                    Nilai maksimal adalah {max}
+                </p>
+            );
+        }
+        function ElemenHTML() {
+            return (
+                <div>
+                    <h1>Nilai Maksimum</h1>
+                    <NilaiMax bil1="10" bil2="3" bil3="4" />
+                </div>
+            );
+        }
+        ReactDOM.render(<ElemenHTML/>, hasil);
+    </script>
+</body>
+
+</html>

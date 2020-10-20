@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 5 - Multiple Function Component</title>
+</head>
+
+<body>
+    <!-- Buat id untuk menampilkan hasil pemrosesan yang dilakukan olah React.js-->
+    <div id="hasil"></div>
+
+    <!-- sematkan library React.js yang diimport melalui CDN-->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- memngubah bahasa elemen HTMl menjadi bahasa react -->
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+    <script type="text/babel">
+        // tulis ReactJS disni saja
+        function Mhs(props) {
+            return(
+                <p>
+                    Nama: {props.nama} <br/>
+                    NIM: {props. NIM} <br/>
+                    Jurusan : {props.jurus} <br />
+                    Angkatan : {props.agkt} <br />
+                    Jenis Kelamin : {props.gender == "L" ? "Laki-laki" : "Perempuan"}<br />
+                    Usia : {props.umur}
+                </p>
+            );
+        }
+        function ElemenHTML() {
+            return(
+                <div>
+                    <h1>Biodata Mahasiswa</h1>
+                    <Mhs NIM="006" nama="Aziz Hussein Z" jurus="Teknik Mekanika Fluida" gender="L" umur="19 tahun"/>
+                    <hr/>
+                    <Mhs NIM="002" nama="Luna" jurus="Teknik Informatika" gender="P" umur="21 tahun" />
+                    <hr />
+                </div>
+            );
+        }
+        ReactDOM.render(<ElemenHTML/>, hasil);
+    </script>
+</body>
+
+</html>

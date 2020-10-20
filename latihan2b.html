@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 2b - Biodata</title>
+</head>
+
+<body>
+    <!-- Buat id untuk menampilkan hasil pemrosesan yang dilakukan olah React.js-->
+    <div id="hasil"></div>
+
+    <!-- sematkan library React.js yang diimport melalui CDN-->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- memngubah bahasa elemen HTMl menjadi bahasa react -->
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+    <script type="text/babel">
+        // tulis ReactJS disni saja
+        const hasil = document.getElementById("hasil");
+        const mhs = {
+            NIM : '346844',
+            nama : 'Aziz Hussien Z',
+            gender :  'Laki-laki',
+            umur : '19 tahun',
+            jurusan : 'Teknik Mekanika Fluida',
+            angkatan : 2018
+        }
+        const elemenHTML = (
+            // menambahkan parent karena memakali lebih dari 1 element
+            <div>
+                <h1 align="center">Biodata Mahasiswa</h1>
+                <p>Nama : {mhs.nama} </p>
+                <p>NIM : {mhs.NIM} </p>
+                <p>Jurusan : {mhs.jurusan}</p>
+                <p>Angkatan : {mhs.angkatan}</p>
+                <p>Jenis Kelamin : {mhs.gender}</p>
+                <p>Usia : {mhs.umur}</p>
+            </div>
+        );
+        
+        ReactDOM.render(elemenHTML, hasil);
+    </script>
+</body>
+
+</html>

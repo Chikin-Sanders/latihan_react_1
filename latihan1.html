@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 1 - Intro React.js</title>
+</head>
+<body>
+    <!-- Buat id untuk menampilkan hasil pemrosesan yang dilakukan olah React.js-->
+    <div id="hasil"></div>
+
+    <!-- sematkan library React.js yang diimport melalui CDN-->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script>
+        // tulis ReactJS disni saja
+        const hasil = document.getElementById("hasil");
+        const elemenHTML = React.createElement(
+            'h1', {align: 'center'}, 'Apa kabar dunia???'
+        );
+        ReactDOM.render(elemenHTML, hasil);
+    </script>
+</body>
+</html>
